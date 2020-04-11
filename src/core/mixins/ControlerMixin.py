@@ -56,7 +56,7 @@ class ControlerMixin:
                 queryCount += 1
 
 
-        if len(attribLst) > 0:
+        if len(attribLst) > 1:
             xpathStr += " and ".join(attribLst)
         else:
             xpathStr += attribLst[0]
