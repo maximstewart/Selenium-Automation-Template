@@ -52,15 +52,10 @@ class ControlerMixin:
         flags = ["id", "class", "type", "value"]
         for key in keys:
             if key in flags:
-                attribLst.append("@" + data[key] + "='" + data[key] + "'")
+                attribLst.append("@" + key + "='" + data[key] + "'")
                 queryCount += 1
 
+        xpathStr += ( " and ".join(attribLst) if len(attribLst) > 1 else attribLst[0] ) + "]"
 
-        if len(attribLst) > 1:
-            xpathStr += " and ".join(attribLst)
-        else:
-            xpathStr += attribLst[0]
-
-        xpathStr += "]"
         self.logger.debug("Generated XPath:  " + xpathStr)
         return xpathStr
