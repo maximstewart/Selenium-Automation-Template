@@ -44,6 +44,9 @@ class Logger:
             folder = "core/logs"
             file   = folder + "/twitter-bot.log"
 
+            if not os.path.exists(folder):
+                os.mkdir(folder)
+
             fh = logging.FileHandler(file)
             fh.setLevel(level=fhLogLevel)
             fh.setFormatter(fFormatter)

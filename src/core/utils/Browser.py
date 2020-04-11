@@ -35,5 +35,7 @@ class Browser:
 
             driver = webdriver.Firefox(options=_options, firefox_profile=profile, log_path=_log_path)
 
+        if driver is None:
+            raise("No driver set! Check your argument or defaults...")
 
         return driver

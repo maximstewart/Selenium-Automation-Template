@@ -1,3 +1,7 @@
+"""
+    Core module
+"""
+
 from .mixins import ControlerMixin
 
 from .utils import Logger
