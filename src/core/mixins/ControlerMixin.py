@@ -37,7 +37,7 @@ class ControlerMixin:
 
     def createXPath(self, data):
         """
-            Don't call directly.
+            Don't call directly from a command file.
 
             :return: created xpath string
         """

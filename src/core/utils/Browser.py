@@ -19,6 +19,8 @@ class Browser:
             :note: Should consider creating methods per browser type.
             :param browserType: The browser we want to use
             :param headless: If we have a gui or not
+
+            :return: the selenium browser driver
         """
         driver    = None
         _log_path = "./core/logs/webdriver.log"

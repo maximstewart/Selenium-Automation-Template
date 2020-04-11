@@ -9,7 +9,15 @@ from core import Context
 
 
 class Main(Context):
+    """
+        This is the start that pulls the Context in and its mixins.
+        Load a command file from here or another class then call
+        respective method names and pass data as needed.
+    """
     def __init__(self, args):
+        """
+            Initialize it all...
+        """
         super().__init__(args)
 
         try:

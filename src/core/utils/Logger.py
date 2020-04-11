@@ -12,7 +12,7 @@ class Logger:
         """
             Create a new logging object and return it.
             :note:
-                NOSET     # Don't know the actual log level of this... (defaulting or litterally none?)
+                NOSET     # Don't know the actual log level of this... (defaulting or literally none?)
                 Log Levels (From least to most)
                 Type      Value
                 CRITICAL   50
@@ -23,7 +23,7 @@ class Logger:
             :param loggerName: Sets the name of the logger object. (Used in log lines)
             :param createFile: Whether we create a log file or just pump to terminal
 
-            :return: returns the logging object we created
+            :return: the logging object we created
         """
 
         globalLogLvl = logging.DEBUG    # Keep this at highest so that handlers can filter to their desired levels
