@@ -41,35 +41,25 @@ class ControlerMixin:
 
             :return: created xpath string
         """
-
+        xpathStr   = "//*["
         keys       = data.keys()
-        attribList = []
-        xpathStr   = ""
+        attribLst  = []
         queryCount = 0
 
         if "elm" in keys:
             xpathStr = "//" + data["elm"] + "["
-            queryCount += 1
-        else:
-            xpathStr = "//" + data["elm"] + "["
 
-        if "id" in keys:
-            attribList.append("@id='" + data["id"] + "'")
-            queryCount += 1
-        if "class" in keys:
-            attribList.append("@class='" + data["class"] + "'")
-            queryCount += 1
-        if "type" in keys:
-            attribList.append("@type='" + data["type"] + "'")
-            queryCount += 1
-        if "value" in keys:
-            attribList.append("@value='" + data["value"] + "'")
-            queryCount += 1
+        flags = ["id", "class", "type", "value"]
+        for key in keys:
+            if key in flags:
+                attribLst.append("@" + data[key] + "='" + data[key] + "'")
+                queryCount += 1
 
-        if len(attribList) > 1:
-            xpathStr += " and ".join(attribList)
+
+        if len(attribLst) > 0:
+            xpathStr += " and ".join(attribLst)
         else:
-            xpathStr += attribList[0]
+            xpathStr += attribLst[0]
 
         xpathStr += "]"
         self.logger.debug("Generated XPath:  " + xpathStr)
